@@ -17,9 +17,7 @@ class LabelServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-labels')
-            ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_laravel-labels_table')
-            ->hasCommand(LabelCommand::class);
     }
 }

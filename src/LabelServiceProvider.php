@@ -16,7 +16,7 @@ class LabelServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-labels')
+            ->name('laravel-label-printer')
             ->hasViews()
             ->hasMigration('create_labels_table');
     }

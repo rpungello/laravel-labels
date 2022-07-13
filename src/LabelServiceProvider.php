@@ -2,9 +2,9 @@
 
 namespace Rpungello\Label;
 
+use Rpungello\Label\Commands\LabelCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Rpungello\Label\Commands\LabelCommand;
 
 class LabelServiceProvider extends PackageServiceProvider
 {

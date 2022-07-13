@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Rpungello\Label\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LabelCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-labels';
 
     public $description = 'My command';
 

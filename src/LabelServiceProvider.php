@@ -18,6 +18,6 @@ class LabelServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-labels')
             ->hasViews()
-            ->hasMigration('create_laravel-labels_table')
+            ->hasMigration('create_labels_table');
     }
 }

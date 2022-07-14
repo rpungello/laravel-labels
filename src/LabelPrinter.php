@@ -21,6 +21,7 @@ class LabelPrinter
     {
         $pdf = new PdfDocument($template);
         $pdf->addLabels($models);
+
         return $pdf;
     }
 }

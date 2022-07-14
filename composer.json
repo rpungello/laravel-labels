@@ -61,7 +61,7 @@
                 "Rpungello\\LaravelLabels\\LabelServiceProvider"
             ],
             "aliases": {
-                "Label": "Rpungello\\LaraveLabels\\Facades\\Label"
+                "LaravelLabelPrinter": "Rpungello\\LaraveLabels\\Facades\\LabelPrinter"
             }
         }
     },

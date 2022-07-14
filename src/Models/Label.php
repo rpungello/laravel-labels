@@ -40,6 +40,11 @@ class Label extends Model
         return $this->hasMany(LabelField::class);
     }
 
+    public function barcodes(): Relation
+    {
+        return $this->hasMany(LabelBarcode::class);
+    }
+
     public function getEffectivePageWidth(): float
     {
         return $this->page_width - $this->horizontal_margin * 2;

@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use Rpungello\LaravelLabels\Models\Label;
+use Rpungello\LaravelLabels\Models\LabelBarcode;
+
+return new class () extends Migration {
+    public function up()
+    {
+        Schema::create('label_barcodes', function (Blueprint $table) {
+            $table->id();
+
+            $table->foreignIdFor(Label::class);
+            $table->unsignedDecimal('x_pos', 4, 1);
+            $table->unsignedDecimal('y_pos', 4, 1);
+
+            $table->unsignedDecimal('width', 4, 1)->nullable();
+            $table->unsignedDecimal('height', 4, 1)->nullable();
+
+            $table->unsignedTinyInteger('type')->default(LabelBarcode::TYPE_1D);
+            $table->string('symbology');
+            $table->string('content');
+
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('label_barcodes');
+    }
+};

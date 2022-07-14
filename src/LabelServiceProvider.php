@@ -18,7 +18,8 @@ class LabelServiceProvider extends PackageServiceProvider
             ->name('laravel-label-printer')
             ->hasViews()
             ->hasMigration('create_labels_table')
-            ->hasMigration('create_label_fields_table');
+            ->hasMigration('create_label_fields_table')
+            ->hasMigration('create_label_barcodes_table');
 
         $this->app->singleton('laravel-label-printer', function () {
             return new LabelPrinter();

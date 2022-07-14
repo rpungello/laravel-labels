@@ -2,7 +2,6 @@
 
 namespace Rpungello\LaravelLabels;
 
-use Rpungello\LaravelLabels\Commands\LabelCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

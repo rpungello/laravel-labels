@@ -7,15 +7,6 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LabelServiceProvider extends PackageServiceProvider
 {
-    public function registeringPackage(): void
-    {
-        parent::registeringPackage();
-
-        $this->app->singleton('laravel-label-printer', function () {
-            return new LabelPrinter();
-        });
-    }
-
     public function configurePackage(Package $package): void
     {
         /*
@@ -28,5 +19,9 @@ class LabelServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_labels_table')
             ->hasMigration('create_label_fields_table');
+
+        $this->app->singleton('laravel-label-printer', function () {
+            return new LabelPrinter();
+        });
     }
 }

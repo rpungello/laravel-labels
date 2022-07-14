@@ -35,8 +35,6 @@ class LabelField extends Model
         'width' => 'float',
         'height' => 'float',
         'font_size' => 'integer',
-        'alignment' => 'integer',
-        'alignment_vertical' => 'integer',
     ];
 
     public function label(): Relation

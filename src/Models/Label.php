@@ -1,6 +1,6 @@
 <?php
 
-namespace Rpungello\Label\Models;
+namespace Rpungello\LaravelLabels\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

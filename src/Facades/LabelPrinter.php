@@ -1,6 +1,6 @@
 <?php
 
-namespace Rpungello\Label\Facades;
+namespace Rpungello\LaravelLabels\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

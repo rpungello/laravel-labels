@@ -31,13 +31,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Rpungello\\Label\\": "src",
-            "Rpungello\\Label\\Database\\Factories\\": "database/factories"
+            "Rpungello\\LaravelLabels\\": "src",
+            "Rpungello\\LaravelLabels\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rpungello\\Label\\Tests\\": "tests"
+            "Rpungello\\LaravelLabels\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -55,10 +55,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rpungello\\Label\\LabelServiceProvider"
+                "Rpungello\\LaravelLabels\\LabelServiceProvider"
             ],
             "aliases": {
-                "Label": "Rpungello\\Label\\Facades\\Label"
+                "Label": "Rpungello\\LaraveLabels\\Facades\\Label"
             }
         }
     },

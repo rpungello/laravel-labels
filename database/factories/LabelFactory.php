@@ -1,9 +1,9 @@
 <?php
 
-namespace Rpungello\Label\Database\Factories;
+namespace Rpungello\LaravelLabels\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Rpungello\Label\Models\Label;
+use Rpungello\LaravelLabels\Models\Label;
 
 class LabelFactory extends Factory
 {

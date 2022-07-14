@@ -1,8 +1,8 @@
 <?php
 
-namespace Rpungello\Label;
+namespace Rpungello\LaravelLabels;
 
-use Rpungello\Label\Commands\LabelCommand;
+use Rpungello\LaravelLabels\Commands\LabelCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,6 +18,7 @@ class LabelServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-label-printer')
             ->hasViews()
-            ->hasMigration('create_labels_table');
+            ->hasMigration('create_labels_table')
+            ->hasMigration('create_label_fields_table');
     }
 }

@@ -55,7 +55,7 @@ php artisan vendor:publish --tag="laravel-labels-views"
 ## Usage
 
 ```php
-$label = new Rpungello\Label();
+$label = new Rpungello\LaravelLabels();
 echo $label->echoPhrase('Hello, Rpungello!');
 ```
 

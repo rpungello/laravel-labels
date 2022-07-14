@@ -1,5 +1,5 @@
 <?php
 
-use Rpungello\Label\Tests\TestCase;
+use Rpungello\LaravelLabels\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

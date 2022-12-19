@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.0.5 - 2022-12-19
+
+Fix issues with floating-point math
+Fix issue where if the labels exactly filled a page, the last one would be missing
+
 ## 1.0.4 - 2022-07-15
 
 Use light gray for debugging boxes and rework how they get drawn.

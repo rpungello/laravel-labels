@@ -60,7 +60,7 @@ class Label extends Model
         $widthRemaining = $this->getEffectivePageWidth();
         $spacingNeeded = $columns = 0;
 
-        while ($widthRemaining > ($this->label_width + $spacingNeeded)) {
+        while (round($widthRemaining, 1) >= round($this->label_width + $spacingNeeded, 1)) {
             $columns++;
             $widthRemaining -= ($this->label_width + $spacingNeeded);
             $spacingNeeded = $this->horizontal_spacing;
@@ -74,7 +74,7 @@ class Label extends Model
         $heightRemaining = $this->getEffectivePageHeight();
         $spacingNeeded = $rows = 0;
 
-        while ($heightRemaining > ($this->label_height + $spacingNeeded)) {
+        while (round($heightRemaining, 1) >= round($this->label_height + $spacingNeeded, 1)) {
             $rows++;
             $heightRemaining -= ($this->label_height + $spacingNeeded);
             $spacingNeeded = $this->vertical_spacing;

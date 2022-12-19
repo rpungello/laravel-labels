@@ -44,3 +44,14 @@ it('can calculate number of rows', function () {
 
     \PHPUnit\Framework\assertEquals(4, $label->getNumberOfRows());
 });
+
+it('can avoid rounding errors', function () {
+    $label = \Rpungello\LaravelLabels\Models\Label::factory()->create([
+        'page_height' => 279.4,
+        'vertical_margin' => 12.7,
+        'label_height' => 25.4,
+        'vertical_spacing' => 0,
+    ]);
+
+    \PHPUnit\Framework\assertEquals(10, $label->getNumberOfRows());
+});

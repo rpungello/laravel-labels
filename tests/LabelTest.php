@@ -1,9 +1,10 @@
 <?php
 
-use Rpungello\LaravelLabels\ArrayLabel;
-use Rpungello\LaravelLabels\LabelPrinter;
 use function Pest\Laravel\assertModelExists;
 use function PHPUnit\Framework\assertEquals;
+
+use Rpungello\LaravelLabels\ArrayLabel;
+use Rpungello\LaravelLabels\LabelPrinter;
 
 use Rpungello\LaravelLabels\Models\Label;
 

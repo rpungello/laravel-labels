@@ -5,6 +5,7 @@ namespace Rpungello\LaravelLabels\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Rpungello\LaravelLabels\LabelServiceProvider;
+use Rpungello\LaravelStringTemplate\LaravelStringTemplateServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -21,6 +22,7 @@ class TestCase extends Orchestra
     {
         return [
             LabelServiceProvider::class,
+            LaravelStringTemplateServiceProvider::class,
         ];
     }
 

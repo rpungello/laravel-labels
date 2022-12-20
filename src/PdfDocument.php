@@ -26,6 +26,7 @@ class PdfDocument extends TCPDF
         $this->numberOfRows = $this->template->getNumberOfRows();
         $this->currentColumn = $this->currentRow = 0;
         $this->AddPage();
+        $this->setAutoPageBreak(false);
     }
 
     public function addLabels(Arrayable|array $labels): void
@@ -37,6 +38,8 @@ class PdfDocument extends TCPDF
 
     public function addLabel(PrintsOnLabels $data): void
     {
+        $this->checkPage();
+
         list($xPos, $yPos) = $this->getCurrentCoordinates();
         $this->addDebugRectangles($xPos, $yPos);
 
@@ -49,7 +52,6 @@ class PdfDocument extends TCPDF
         }
 
         $this->currentColumn++;
-        $this->checkPage();
     }
 
     private function getCurrentCoordinates(): array

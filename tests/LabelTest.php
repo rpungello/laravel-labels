@@ -54,4 +54,31 @@ it('can avoid rounding errors', function () {
     ]);
 
     \PHPUnit\Framework\assertEquals(10, $label->getNumberOfRows());
+it('prints the correct number of pages', function () {
+    $printer = new LabelPrinter();
+    $template = Label::factory()->create([
+        'page_width' => 215.9,
+        'page_height' => 279.4,
+        'horizontal_margin' => 4.8,
+        'vertical_margin' => 12.7,
+        'label_width' => 66.7,
+        'label_height' => 25.4,
+        'horizontal_spacing' => 2.9,
+        'vertical_spacing' => 0,
+    ]);
+    $template->fields()->create([
+        'x_pos' => 0,
+        'y_pos' => 0,
+        'width' => 66.7,
+        'height' => 25.4,
+        'content' => '{value}',
+    ]);
+
+    $labels = [];
+    for ($i = 0; $i < 90; $i++) {
+        $labels[] = new ArrayLabel([
+            'value' => 'Label #' . $i + 1,
+        ]);
+    }
+
 });

@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.1.0 - 2023-03-08
+
+Add support for Laravel 10.0
+
 ## 1.0.6 - 2022-12-20
 
 Fix issue with prematurely adding new pages

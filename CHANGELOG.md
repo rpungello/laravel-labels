@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.1.1 - 2023-08-07
+
+Honor font_size field on fields
+
 ## 1.1.0 - 2023-03-08
 
 Add support for Laravel 10.0

@@ -103,6 +103,8 @@ class PdfDocument extends TCPDF
             $this->setDrawColor(220, 220, 220);
         }
 
+        $this->setFontSize($field->font_size);
+
         $this->MultiCell(
             is_null($field->width) ? $maxWidth : min($field->width, $maxWidth),
             is_null($field->height) ? $maxHeight : min($field->height, $maxHeight),

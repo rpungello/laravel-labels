@@ -3,6 +3,7 @@
 namespace Rpungello\LaravelLabels;
 
 use Illuminate\Contracts\Support\Arrayable;
+use Rpungello\LaravelLabels\Enums\BarcodeType;
 use Rpungello\LaravelLabels\Models\Label;
 use Rpungello\LaravelLabels\Models\LabelBarcode;
 use Rpungello\LaravelLabels\Models\LabelField;
@@ -128,7 +129,7 @@ class PdfDocument extends TCPDF
 
         $formattedContent = LaravelStringTemplate::format($barcode->content, $data->getLabelData());
 
-        if ($barcode->type === LabelBarcode::TYPE_1D) {
+        if ($barcode->type === BarcodeType::OneDimensional) {
             $this->write1DBarcode(
                 $formattedContent,
                 $barcode->symbology,

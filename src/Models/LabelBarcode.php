@@ -33,7 +33,7 @@ class LabelBarcode extends Model
         'y_pos' => 'float',
         'width' => 'float',
         'height' => 'float',
-        'type' => 'int',
+        'type' => BarcodeType::class,
     ];
 
     public function label(): Relation

@@ -32,7 +32,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pdo, intl, gd, iconv, imagick, fileinfo, sqlite, pdo_sqlite
+          extensions: zip, pdo, sqlite, pdo_sqlite
           coverage: none
 
       - name: Setup problem matchers

@@ -2,9 +2,10 @@
 
 namespace Rpungello\LaravelLabels\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
-class LabelBarcode extends \Illuminate\Database\Eloquent\Model
+class LabelBarcode extends Model
 {
     public const TYPE_1D = 0;
     public const TYPE_2D = 1;

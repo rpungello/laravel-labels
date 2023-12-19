@@ -2,14 +2,11 @@
 
 namespace Rpungello\LaravelLabels\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
 class LabelField extends Model
 {
-    use HasFactory;
-
     public const DEFAULT_FONT_SIZE = 12;
 
     public const STYLE_NONE = 0;

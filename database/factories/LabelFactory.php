@@ -9,7 +9,7 @@ class LabelFactory extends Factory
 {
     protected $model = Label::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->word(),

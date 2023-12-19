@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.2.0 - 2023-12-19
+
+Improved code styling, primarily via the use of enums instead of class constants
+
 ## 1.1.1 - 2023-08-07
 
 Honor font_size field on fields

@@ -8,7 +8,14 @@ use Rpungello\LaravelLabels\Enums\BarcodeType;
 
 class LabelBarcode extends Model
 {
+    /**
+     * @deprecated use BarcodeType::OneDimensional
+     */
     public const TYPE_1D = BarcodeType::OneDimensional;
+
+    /**
+     * @deprecated use BarcodeType::TwoDimensional
+     */
     public const TYPE_2D = BarcodeType::TwoDimensional;
 
     protected $fillable = [

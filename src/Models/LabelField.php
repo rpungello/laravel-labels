@@ -10,9 +10,24 @@ class LabelField extends Model
 {
     public const DEFAULT_FONT_SIZE = 12;
 
+    /**
+     * @deprecated use Style::None
+     */
     public const STYLE_NONE = Style::None;
+
+    /**
+     * @deprecated use Style::Bold
+     */
     public const STYLE_BOLD = Style::Bold;
+
+    /**
+     * @deprecated use Style::Italic
+     */
     public const STYLE_ITALIC = Style::Italic;
+
+    /**
+     * @deprecated use Style::Underline
+     */
     public const STYLE_UNDERLINE = Style::Underline;
 
     protected $fillable = [

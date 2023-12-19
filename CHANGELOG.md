@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.4.0 - 2023-12-19
+
+Add casts for enum fields
+
 ## 1.3.0 - 2023-12-19
 
 Add ability to force debugging mode when printing labels

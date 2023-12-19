@@ -18,7 +18,7 @@ class PdfDocument extends TCPDF
     protected int $currentColumn;
     protected int $currentRow;
 
-    public function __construct(protected Label $template)
+    public function __construct(protected Label $template, protected bool $forceDebug = false)
     {
         parent::__construct('P', 'mm', [$template->page_width, $template->page_height]);
 
@@ -85,7 +85,7 @@ class PdfDocument extends TCPDF
 
     private function debuggingRectangle(float $xPos, float $yPos, float $width, float $height, Color $color): void
     {
-        if (config('app.debug')) {
+        if ($this->forceDebug || config('app.debug')) {
             $this->setDrawColor($color->red(), $color->green(), $color->blue());
             $this->Rect($xPos, $yPos, $width, $height);
         }
@@ -99,7 +99,7 @@ class PdfDocument extends TCPDF
         $maxWidth = $this->template->label_width - $this->template->padding * 2 - $field->x_pos;
         $maxHeight = $this->template->label_height - $this->template->padding * 2 - $field->y_pos;
 
-        if (config('app.debug')) {
+        if ($this->forceDebug || config('app.debug')) {
             $this->setDrawColor(220, 220, 220);
         }
 
@@ -109,7 +109,7 @@ class PdfDocument extends TCPDF
             is_null($field->width) ? $maxWidth : min($field->width, $maxWidth),
             is_null($field->height) ? $maxHeight : min($field->height, $maxHeight),
             LaravelStringTemplate::format($field->content, $data->getLabelData()),
-            border: config('app.debug'),
+            border: $this->forceDebug || config('app.debug'),
             align: $field->alignment,
             x: $fieldXPos,
             y: $fieldYPos,

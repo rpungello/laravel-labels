@@ -12,14 +12,14 @@ class LabelPrinter
     {
     }
 
-    public function getPdfFromCollection(Label $template, Collection $models): TCPDF
+    public function getPdfFromCollection(Label $template, Collection $models, bool $forceDebug = false): TCPDF
     {
-        return $this->getPdfFromArray($template, $models->toArray());
+        return $this->getPdfFromArray($template, $models->toArray(), $forceDebug);
     }
 
-    public function getPdfFromArray(Label $template, array $models): TCPDF
+    public function getPdfFromArray(Label $template, array $models, bool $forceDebug = false): TCPDF
     {
-        $pdf = new PdfDocument($template);
+        $pdf = new PdfDocument($template, $forceDebug);
         $pdf->addLabels($models);
 
         return $pdf;

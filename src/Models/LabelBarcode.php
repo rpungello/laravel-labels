@@ -4,11 +4,12 @@ namespace Rpungello\LaravelLabels\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Rpungello\LaravelLabels\Enums\BarcodeType;
 
 class LabelBarcode extends Model
 {
-    public const TYPE_1D = 0;
-    public const TYPE_2D = 1;
+    public const TYPE_1D = BarcodeType::OneDimensional;
+    public const TYPE_2D = BarcodeType::TwoDimensional;
 
     protected $fillable = [
         'x_pos',

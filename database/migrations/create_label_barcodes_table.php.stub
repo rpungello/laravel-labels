@@ -3,11 +3,11 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Rpungello\LaravelLabels\Enums\BarcodeType;
 use Rpungello\LaravelLabels\Models\Label;
-use Rpungello\LaravelLabels\Models\LabelBarcode;
 
 return new class () extends Migration {
-    public function up()
+    public function up(): void
     {
         Schema::create('label_barcodes', function (Blueprint $table) {
             $table->id();
@@ -19,7 +19,7 @@ return new class () extends Migration {
             $table->unsignedDecimal('width', 4, 1)->nullable();
             $table->unsignedDecimal('height', 4, 1)->nullable();
 
-            $table->unsignedTinyInteger('type')->default(LabelBarcode::TYPE_1D);
+            $table->unsignedTinyInteger('type')->default(BarcodeType::OneDimensional->value);
             $table->string('symbology');
             $table->string('content');
 
@@ -27,7 +27,7 @@ return new class () extends Migration {
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('label_barcodes');
     }

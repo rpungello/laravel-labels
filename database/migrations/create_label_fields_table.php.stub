@@ -3,11 +3,14 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Rpungello\LaravelLabels\Enums\HorizontalAlignment;
+use Rpungello\LaravelLabels\Enums\Style;
+use Rpungello\LaravelLabels\Enums\VerticalAlignment;
 use Rpungello\LaravelLabels\Models\Label;
 use Rpungello\LaravelLabels\Models\LabelField;
 
 return new class () extends Migration {
-    public function up()
+    public function up(): void
     {
         Schema::create('label_fields', function (Blueprint $table) {
             $table->id();
@@ -20,9 +23,9 @@ return new class () extends Migration {
             $table->unsignedDecimal('height', 4, 1)->nullable();
 
             $table->unsignedTinyInteger('font_size')->default(LabelField::DEFAULT_FONT_SIZE);
-            $table->unsignedTinyInteger('style')->default(LabelField::STYLE_NONE);
-            $table->char('alignment', 1)->default('L');
-            $table->char('alignment_vertical', 1)->default('T');
+            $table->unsignedTinyInteger('style')->default(Style::None->value);
+            $table->char('alignment', 1)->default(HorizontalAlignment::Left->value);
+            $table->char('alignment_vertical', 1)->default(VerticalAlignment::Top->value);
 
             $table->string('content');
 
@@ -30,7 +33,7 @@ return new class () extends Migration {
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('label_fields');
     }

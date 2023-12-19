@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.3.0 - 2023-12-19
+
+Add ability to force debugging mode when printing labels
+
 ## 1.2.0 - 2023-12-19
 
 Improved code styling, primarily via the use of enums instead of class constants

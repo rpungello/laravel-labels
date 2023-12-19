@@ -4,7 +4,9 @@ namespace Rpungello\LaravelLabels\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Rpungello\LaravelLabels\Enums\HorizontalAlignment;
 use Rpungello\LaravelLabels\Enums\Style;
+use Rpungello\LaravelLabels\Enums\VerticalAlignment;
 
 class LabelField extends Model
 {
@@ -48,6 +50,9 @@ class LabelField extends Model
         'width' => 'float',
         'height' => 'float',
         'font_size' => 'integer',
+        'style' => 'integer',
+        'alignment' => HorizontalAlignment::class,
+        'alignment_vertical' => VerticalAlignment::class,
     ];
 
     public function label(): Relation

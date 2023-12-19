@@ -111,10 +111,10 @@ class PdfDocument extends TCPDF
             is_null($field->height) ? $maxHeight : min($field->height, $maxHeight),
             LaravelStringTemplate::format($field->content, $data->getLabelData()),
             border: $this->forceDebug || config('app.debug'),
-            align: $field->alignment,
+            align: $field->alignment->value,
             x: $fieldXPos,
             y: $fieldYPos,
-            valign: $field->alignment_vertical,
+            valign: $field->alignment_vertical->value,
             fitcell: true,
         );
     }

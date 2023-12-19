@@ -62,7 +62,7 @@ class PdfDocument extends TCPDF
         ];
     }
 
-    private function addDebugRectangles(float $xPos, float $yPos)
+    private function addDebugRectangles(float $xPos, float $yPos): void
     {
         $this->debuggingRectangle(
             $xPos - $this->template->padding,
@@ -83,7 +83,7 @@ class PdfDocument extends TCPDF
         $this->setDrawColor(0, 0, 0);
     }
 
-    private function debuggingRectangle(float $xPos, float $yPos, float $width, float $height, Color $color)
+    private function debuggingRectangle(float $xPos, float $yPos, float $width, float $height, Color $color): void
     {
         if (config('app.debug')) {
             $this->setDrawColor($color->red(), $color->green(), $color->blue());
@@ -91,7 +91,7 @@ class PdfDocument extends TCPDF
         }
     }
 
-    private function addLabelField(LabelField $field, PrintsOnLabels $data, float $xPos, float $yPos)
+    private function addLabelField(LabelField $field, PrintsOnLabels $data, float $xPos, float $yPos): void
     {
         $fieldXPos = $xPos + $field->x_pos;
         $fieldYPos = $yPos + $field->y_pos;
@@ -118,7 +118,7 @@ class PdfDocument extends TCPDF
         );
     }
 
-    private function addLabelBarcode(LabelBarcode $barcode, PrintsOnLabels $data, float $xPos, float $yPos)
+    private function addLabelBarcode(LabelBarcode $barcode, PrintsOnLabels $data, float $xPos, float $yPos): void
     {
         $barcodeXPos = $xPos + $barcode->x_pos;
         $barcodeYPos = $yPos + $barcode->y_pos;

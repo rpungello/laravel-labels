@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.4.1 - 2024-01-16
+
+Add support for landscape templates
+
 ## 1.4.0 - 2023-12-19
 
 Add casts for enum fields

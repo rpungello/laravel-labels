@@ -21,7 +21,11 @@ class PdfDocument extends TCPDF
 
     public function __construct(protected Label $template, protected bool $forceDebug = false)
     {
-        parent::__construct('P', 'mm', [$template->page_width, $template->page_height]);
+        if ($this->template->page_width > $this->template->page_height) {
+            parent::__construct('L', 'mm', [$template->page_width, $template->page_height]);
+        } else {
+            parent::__construct('P', 'mm', [$template->page_width, $template->page_height]);
+        }
 
         $this->numberOfColumns = $this->template->getNumberOfColumns();
         $this->numberOfRows = $this->template->getNumberOfRows();

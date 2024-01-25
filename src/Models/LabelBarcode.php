@@ -38,6 +38,6 @@ class LabelBarcode extends Model
 
     public function label(): Relation
     {
-        return $this->belongsTo(Label::class);
+        return $this->belongsTo(config('labels.label_class'));
     }
 }

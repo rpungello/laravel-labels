@@ -18,8 +18,14 @@ composer require rpungello/laravel-labels
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-labels-migrations"
+php artisan vendor:publish --tag="label-printer-migrations"
 php artisan migrate
+```
+
+You can publish the config with:
+
+```bash
+php artisan vendor:publish --tag="label-printer-config"
 ```
 
 ## Testing

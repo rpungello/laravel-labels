@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.5.0 - 2024-01-25
+
+Allow fields & barcodes to reference customized label model classes
+
 ## 1.4.1 - 2024-01-16
 
 Add support for landscape templates

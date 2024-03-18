@@ -204,9 +204,16 @@ class PdfDocument extends TCPDF
         return $this->downloadResponse($filename, 'inline');
     }
 
-    public function saveTemp($tempDir = null): string
+    /**
+     * Saves the PDF to a temporary file and returns the path
+     *
+     * @param null $tempDir
+     * @param string $prefix
+     * @return string
+     */
+    public function saveTemp($tempDir = null, string $prefix = 'labels-'): string
     {
-        $path = tempnam($tempDir ?: sys_get_temp_dir(), 'labels-');
+        $path = tempnam($tempDir ?: sys_get_temp_dir(), $prefix);
         $this->Output($path, 'F');
 
         return $path;

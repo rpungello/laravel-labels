@@ -45,3 +45,18 @@ it('can save files to Laravel disks', function () {
     assertTrue($pdf->saveToDisk('test', 'test.pdf'));
     assertTrue(Storage::disk('test')->exists('test.pdf'));
 });
+
+it('can save files to Laravel disks with random names', function () {
+    $this->instance(Storage::class, Storage::fake('test'));
+
+    $printer = new LabelPrinter();
+    $template = Label::factory()->create();
+    $labels = [];
+    for ($i = 0; $i < 90; $i++) {
+        $labels[] = new ArrayLabel([
+            'value' => 'Label #' . $i + 1,
+        ]);
+    }
+    $pdf = $printer->getPdfFromArray($template, $labels);
+    assertTrue($pdf->saveToDiskFolder('test'));
+});

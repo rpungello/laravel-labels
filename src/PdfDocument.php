@@ -4,6 +4,7 @@ namespace Rpungello\LaravelLabels;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Facades\Storage;
+use Ramsey\Uuid\Uuid;
 use Rpungello\LaravelLabels\Enums\BarcodeType;
 use Rpungello\LaravelLabels\Models\Label;
 use Rpungello\LaravelLabels\Models\LabelBarcode;
@@ -236,5 +237,23 @@ class PdfDocument extends TCPDF
                 fopen($this->saveTemp(), 'r'),
                 $options
             );
+    }
+
+    /**
+     * Uploads the PDF to a Laravel disk using a randomly generated filename
+     *
+     * @param string $disk
+     * @param string|null $folder
+     * @param array|null $options
+     * @return bool
+     */
+    public function saveToDiskFolder(string $disk, string $folder = null, array $options = null): bool
+    {
+        $path = Uuid::uuid4()->toString() . '.pdf';
+        if (! empty($folder)) {
+            $path = "$folder/$path";
+        }
+
+        return $this->saveToDisk($disk, $path, $options);
     }
 }

@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Storage;
-use Rpungello\LaravelLabels\ArrayLabel;
-use Rpungello\LaravelLabels\LabelPrinter;
-use Rpungello\LaravelLabels\Models\Label;
+
 use function PHPUnit\Framework\assertFileExists;
 use function PHPUnit\Framework\assertGreaterThan;
 use function PHPUnit\Framework\assertTrue;
+
+use Rpungello\LaravelLabels\ArrayLabel;
+use Rpungello\LaravelLabels\LabelPrinter;
+use Rpungello\LaravelLabels\Models\Label;
 
 function assertEquals(int $getStatusCode, $HTTP_OK)
 {

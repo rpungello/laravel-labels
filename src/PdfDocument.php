@@ -244,10 +244,10 @@ class PdfDocument extends TCPDF
      *
      * @param string $disk
      * @param string|null $folder
-     * @param array|null $options
+     * @param array $options
      * @return bool
      */
-    public function saveToDiskFolder(string $disk, string $folder = null, array $options = null): bool
+    public function saveToDiskFolder(string $disk, string $folder = null, array $options = []): bool
     {
         $path = Uuid::uuid4()->toString() . '.pdf';
         if (! empty($folder)) {

@@ -58,5 +58,6 @@ it('can save files to Laravel disks with random names', function () {
         ]);
     }
     $pdf = $printer->getPdfFromArray($template, $labels);
-    assertTrue($pdf->saveToDiskFolder('test'));
+    $remotePath = $pdf->saveToDiskFolder('test');
+    assertTrue(Storage::disk('test')->exists($remotePath));
 });

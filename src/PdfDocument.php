@@ -10,6 +10,7 @@ use Rpungello\LaravelLabels\Models\Label;
 use Rpungello\LaravelLabels\Models\LabelBarcode;
 use Rpungello\LaravelLabels\Models\LabelField;
 use Rpungello\LaravelStringTemplate\Facades\LaravelStringTemplate;
+use RuntimeException;
 use Spatie\Color\Color;
 use Spatie\Color\Hsl;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -245,15 +246,19 @@ class PdfDocument extends TCPDF
      * @param string $disk
      * @param string|null $folder
      * @param array $options
-     * @return bool
+     * @return string
      */
-    public function saveToDiskFolder(string $disk, string $folder = null, array $options = []): bool
+    public function saveToDiskFolder(string $disk, string $folder = null, array $options = []): string
     {
         $path = Uuid::uuid4()->toString() . '.pdf';
         if (! empty($folder)) {
             $path = "$folder/$path";
         }
 
-        return $this->saveToDisk($disk, $path, $options);
+        if (! $this->saveToDisk($disk, $path, $options)) {
+            throw new RuntimeException('Failed to save PDF to disk');
+        }
+
+        return $path;
     }
 }

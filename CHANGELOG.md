@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.7.0 - 2024-03-18
+
+Added helper function for saving PDF documents to Laravel disks
+
 ## 1.6.0 - 2024-03-18
 
 Added helper functions to generate Laravel file responses

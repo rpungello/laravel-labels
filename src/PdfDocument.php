@@ -208,6 +208,7 @@ class PdfDocument extends TCPDF
     {
         $path = tempnam($tempDir ?: sys_get_temp_dir(), 'labels-');
         $this->Output($path, 'F');
+
         return $path;
     }
 }

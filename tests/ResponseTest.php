@@ -1,11 +1,12 @@
 <?php
 
+use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertGreaterThan;
+
 use Rpungello\LaravelLabels\ArrayLabel;
 use Rpungello\LaravelLabels\LabelPrinter;
 use Rpungello\LaravelLabels\Models\Label;
 use Symfony\Component\HttpFoundation\Response;
-use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertGreaterThan;
 
 it('can generate download responses', function () {
     $printer = new LabelPrinter();

@@ -4,7 +4,6 @@ namespace Rpungello\LaravelLabels;
 
 use Illuminate\Support\Collection;
 use Rpungello\LaravelLabels\Models\Label;
-use TCPDF;
 
 class LabelPrinter
 {

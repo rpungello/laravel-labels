@@ -10,6 +10,7 @@ use Rpungello\LaravelLabels\Models\LabelField;
 use Rpungello\LaravelStringTemplate\Facades\LaravelStringTemplate;
 use Spatie\Color\Color;
 use Spatie\Color\Hsl;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use TCPDF;
 
 class PdfDocument extends TCPDF
@@ -173,5 +174,40 @@ class PdfDocument extends TCPDF
 
     public function Footer(): void
     {
+    }
+
+    /**
+     * Creates a Symfony response that forces the user to download the PDF
+     *
+     * @param string $filename
+     * @param string $disposition
+     * @return BinaryFileResponse
+     */
+    public function downloadResponse(string $filename = 'Labels.pdf', string $disposition = 'attachment'): BinaryFileResponse
+    {
+        return response()->download(
+            $this->saveTemp(),
+            $filename,
+            ['Content-Type' => 'application/pdf'],
+            $disposition
+        );
+    }
+
+    /**
+     * Creates a Symfony response that displays the PDF in the browser without downloading it
+     *
+     * @param string $filename
+     * @return BinaryFileResponse
+     */
+    public function viewResponse(string $filename = 'Labels.pdf'): BinaryFileResponse
+    {
+        return $this->downloadResponse($filename, 'inline');
+    }
+
+    public function saveTemp($tempDir = null): string
+    {
+        $path = tempnam($tempDir ?: sys_get_temp_dir(), 'labels-');
+        $this->Output($path, 'F');
+        return $path;
     }
 }

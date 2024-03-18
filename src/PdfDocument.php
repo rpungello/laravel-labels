@@ -3,6 +3,7 @@
 namespace Rpungello\LaravelLabels;
 
 use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Facades\Storage;
 use Rpungello\LaravelLabels\Enums\BarcodeType;
 use Rpungello\LaravelLabels\Models\Label;
 use Rpungello\LaravelLabels\Models\LabelBarcode;
@@ -217,5 +218,23 @@ class PdfDocument extends TCPDF
         $this->Output($path, 'F');
 
         return $path;
+    }
+
+    /**
+     * Uploads the PDF to a Laravel disk
+     *
+     * @param string $disk
+     * @param string $remotePath
+     * @param array $options
+     * @return bool
+     */
+    public function saveToDisk(string $disk, string $remotePath, array $options = []): bool
+    {
+        return Storage::disk($disk)
+            ->writeStream(
+                $remotePath,
+                fopen($this->saveTemp(), 'r'),
+                $options
+            );
     }
 }

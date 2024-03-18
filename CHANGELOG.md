@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 1.6.0 - 2024-03-18
+
+Added helper functions to generate Laravel file responses
+
 ## 1.5.0 - 2024-01-25
 
 Allow fields & barcodes to reference customized label model classes

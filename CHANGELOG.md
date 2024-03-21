@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 2.0.0 - 2024-03-21
+
+Enable support for Laravel 11
+
 ## 1.7.1 - 2024-03-18
 
 Added helper function to upload PDFs to Laravel disks with random names

@@ -16,11 +16,11 @@ return new class () extends Migration {
             $table->id();
 
             $table->foreignIdFor(Label::class)->constrained()->cascadeOnDelete();
-            $table->unsignedDecimal('x_pos', 4, 1);
-            $table->unsignedDecimal('y_pos', 4, 1);
+            $table->decimal('x_pos', 4, 1);
+            $table->decimal('y_pos', 4, 1);
 
-            $table->unsignedDecimal('width', 4, 1)->nullable();
-            $table->unsignedDecimal('height', 4, 1)->nullable();
+            $table->decimal('width', 4, 1)->nullable();
+            $table->decimal('height', 4, 1)->nullable();
 
             $table->unsignedTinyInteger('font_size')->default(LabelField::DEFAULT_FONT_SIZE);
             $table->unsignedTinyInteger('style')->default(Style::None->value);

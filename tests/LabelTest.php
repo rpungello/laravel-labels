@@ -1,14 +1,14 @@
 <?php
 
-use Rpungello\LaravelLabels\Observers\LabelObserver;
 use function Pest\Laravel\assertModelExists;
 use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertTrue;
 
 use Rpungello\LaravelLabels\ArrayLabel;
 use Rpungello\LaravelLabels\LabelPrinter;
 
 use Rpungello\LaravelLabels\Models\Label;
-use function PHPUnit\Framework\assertTrue;
+use Rpungello\LaravelLabels\Observers\LabelObserver;
 
 it('can create a model', function () {
     $label = Label::factory()->create();

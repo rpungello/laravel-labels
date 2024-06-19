@@ -23,13 +23,8 @@ class LabelObserver
         return [
             'page_width' => 1,
             'page_height' => 1,
-            'horizontal_margin' => 0,
-            'vertical_margin' => 0,
             'label_width' => 1,
             'label_height' => 1,
-            'horizontal_spacing' => 0,
-            'vertical_spacing' => 0,
-            'padding' => 0,
         ];
     }
 }

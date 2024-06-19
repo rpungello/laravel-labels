@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.2",
+        "php": "^8.1",
         "illuminate/contracts": "^9.0|^10.0|^11.0",
         "rpungello/laravel-string-template": "^3.0",
         "spatie/color": "^1.5",

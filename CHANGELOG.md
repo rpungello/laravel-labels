@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 2.1.0 - 2024-06-19
+
+Add observer for defining default values for otherwise required fields
+This is a convenience that allows user UIs to only prompt for name on creation, then use the update UI for assigning all the otherwise required fields.
+This could also have been handled at the database level, but doing it this way makes it so others accessing the database directly don't rely on default values that may otherwise never be set (as there's not necessarily a UI).
+
 ## 2.0.0 - 2024-03-21
 
 Enable support for Laravel 11

@@ -1,5 +1,6 @@
 <?php
 
+use Rpungello\LaravelLabels\Observers\LabelObserver;
 use function Pest\Laravel\assertModelExists;
 use function PHPUnit\Framework\assertEquals;
 
@@ -7,6 +8,7 @@ use Rpungello\LaravelLabels\ArrayLabel;
 use Rpungello\LaravelLabels\LabelPrinter;
 
 use Rpungello\LaravelLabels\Models\Label;
+use function PHPUnit\Framework\assertTrue;
 
 it('can create a model', function () {
     $label = Label::factory()->create();
@@ -93,4 +95,24 @@ it('prints the correct number of pages', function () {
 
     $pdf = $printer->getPdfFromArray($template, $labels);
     assertEquals($pdf->getNumPages(), 3);
+});
+
+it('can create labels with default values', function () {
+    $label = new Label([
+        'name' => 'Test Label',
+    ]);
+    $observer = new LabelObserver();
+    $observer->creating($label);
+    assertTrue($label->save());
+});
+
+it('can create labels with default values without overriding specified ones', function () {
+    $label = new Label([
+        'name' => 'Test Label',
+        'label_width' => 100,
+    ]);
+    $observer = new LabelObserver();
+    $observer->creating($label);
+    assertTrue($label->save());
+    assertEquals($label->label_width, 100);
 });

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Facades\Storage;
 use Ramsey\Uuid\Uuid;
 use Rpungello\LaravelLabels\Enums\BarcodeType;
+use Rpungello\LaravelLabels\Enums\Style;
 use Rpungello\LaravelLabels\Models\Label;
 use Rpungello\LaravelLabels\Models\LabelBarcode;
 use Rpungello\LaravelLabels\Models\LabelField;
@@ -113,6 +114,7 @@ class PdfDocument extends TCPDF
         }
 
         $this->setFontSize($field->font_size);
+        $this->setFont(null, $this->getPdfFontStyle($field));
 
         $this->MultiCell(
             is_null($field->width) ? $maxWidth : min($field->width, $maxWidth),
@@ -260,5 +262,24 @@ class PdfDocument extends TCPDF
         }
 
         return $path;
+    }
+
+    private function getPdfFontStyle(LabelField $field): string
+    {
+        $style = '';
+
+        if ($field->style & Style::Bold->value) {
+            $style .= 'b';
+        }
+
+        if ($field->style & Style::Italic->value) {
+            $style .= 'i';
+        }
+
+        if ($field->style & Style::Underline->value) {
+            $style .= 'u';
+        }
+
+        return $style;
     }
 }

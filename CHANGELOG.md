@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 2.2.0 - 2025-01-02
+
+Honor text style
+
 ## 2.1.0 - 2024-06-19
 
 Add observer for defining default values for otherwise required fields

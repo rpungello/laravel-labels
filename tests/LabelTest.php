@@ -6,7 +6,6 @@ use function PHPUnit\Framework\assertTrue;
 
 use Rpungello\LaravelLabels\ArrayLabel;
 use Rpungello\LaravelLabels\LabelPrinter;
-
 use Rpungello\LaravelLabels\Models\Label;
 use Rpungello\LaravelLabels\Observers\LabelObserver;
 

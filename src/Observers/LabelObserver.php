@@ -8,7 +8,7 @@ class LabelObserver
 {
     public function creating(Label $label): void
     {
-        foreach($this->getDefaultValues() as $field => $defaultValue) {
+        foreach ($this->getDefaultValues() as $field => $defaultValue) {
             if (empty($label->getAttribute($field))) {
                 $label->setAttribute($field, $defaultValue);
             }

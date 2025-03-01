@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 2.3.0 - 2025-03-01
+
+Added support for Laravel 12
+
 ## 2.2.0 - 2025-01-02
 
 Honor text style

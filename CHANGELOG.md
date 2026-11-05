@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-labels` will be documented in this file.
 
+## 3.0.1 - 2026-11-05
+
+Re-release
+
 ## 3.0.0 - 2026-11-05
 
 Add support for Laravel 13

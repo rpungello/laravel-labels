@@ -1,0 +1,15 @@
+on:
+  release:
+    types: [released]
+name: Update Composer repository
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-build Composer repository
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Build package repository
+          repo: rpungello/composer
+          token: ${{ secrets.COMPOSER_ACCESS_TOKEN }}
+          ref: "main"
